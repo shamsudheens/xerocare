@@ -1,4 +1,4 @@
-# Xerocare 🏥
+# Xerocare
 
 **Xerocare** is a **full‑stack, role‑based, enterprise asset and operations management system** built using modern web and backend technologies.
 
