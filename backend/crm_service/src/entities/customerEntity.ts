@@ -1,0 +1,41 @@
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  CreateDateColumn,
+  UpdateDateColumn,
+  Index,
+} from 'typeorm';
+
+@Entity('customers')
+export class Customer {
+  @PrimaryGeneratedColumn('uuid')
+  id!: string;
+
+  @Column()
+  name!: string;
+
+  @Column({ nullable: true })
+  @Index()
+  email?: string;
+
+  @Column({ nullable: true })
+  @Index()
+  phone?: string;
+
+  @Column({ type: 'varchar', length: 255, nullable: true })
+  location!: string | null;
+
+  @Column({ default: true })
+  isActive!: boolean;
+
+  @Column({ name: 'branch_id', nullable: true })
+  @Index()
+  branch_id?: string;
+
+  @CreateDateColumn()
+  createdAt!: Date;
+
+  @UpdateDateColumn()
+  updatedAt!: Date;
+}
